@@ -1,0 +1,14 @@
+<div style="text-align: center;">
+  <h1>Parent Component</h1>
+
+  <!-- Example of preserveWhitespaces -->
+  <!-- <button>add</button> <button>sub</button> <button>mult</button> <button>div</button> -->
+
+  <!-- # keyword use for template reference variable -->
+  parent component: <input type="text" #Pcomponent (keyup)="0">
+
+  <app-employee [Pdata]="Pcomponent.value"> </app-employee>
+
+
+
+</div>
