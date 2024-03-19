@@ -4,12 +4,18 @@
   <!-- Example of preserveWhitespaces -->
   <!-- <button>add</button> <button>sub</button> <button>mult</button> <button>div</button> -->
 
-  <!-- Parent to child communication using input property -->
-  <!-- # keyword use for template reference variable -->
-  parent component: <input type="text" #Pcomponent (keyup)="0">
+  <!-- (keyup) is function, when function is called then value will passed to Child -->
 
-  <app-employee [Pdata]="Pcomponent.value"> </app-employee>
+  <!-- *****Parent to child communication using input property***** -->
+  <!-- '#' keyword use for template reference variable -->
+  <!-- parent component: <input type="text" #Pcomponent (keyup)="0"> -->
+
+  <!-- child component -->
+  <!-- <app-employee [Pdata]="Pcomponent.value"> </app-employee> -->
 
 
+  value of child component: {{cdata}}
+
+  <app-employee (childevent)="cdata = $event"></app-employee>
 
 </div>

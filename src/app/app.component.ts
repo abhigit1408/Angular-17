@@ -24,7 +24,7 @@ class abc {
   //used to give space between elements: default value is false
   preserveWhitespaces: true,
 
-  // encapsulation: ViewEncapsulation.ShadowDom,
+  encapsulation: ViewEncapsulation.ShadowDom,
 
   viewProviders: [abc, Book]
 })
@@ -32,10 +32,18 @@ class abc {
 
 export class AppComponent {
   title = 'myAngularApp';
-  constructor(private _abc: abc, private _book: Book) {
-    console.log("Constructor called");
-    _abc.show();
-  }
+  cdata: any;
+
+  // constructor(private _abc: abc, private _book: Book) {
+  //   console.log("Constructor called");
+  //   _abc.show();
+  // }
+
+
+
+  // getData(val: any) {
+  //   this.cdata = val;
+  // }
 
 
   // //it calls only one method below it

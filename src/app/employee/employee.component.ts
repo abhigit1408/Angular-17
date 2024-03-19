@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-employee',
@@ -6,11 +6,19 @@ import { Component, ViewEncapsulation } from '@angular/core';
   imports: [],
   templateUrl: './employee.component.html',
   styleUrl: './employee.component.css',
-  // encapsulation:ViewEncapsulation.None,
-  inputs: ['Pdata']
+
+  // inputs: ['Pdata']
+  outputs: ['childevent']
 
 })
 export class EmployeeComponent {
 
-  Pdata: any;
+  // Pdata: any;
+
+
+  childevent = new EventEmitter();
+  sendData(val: any) {
+    this.childevent.emit(val);
+
+  }
 }
