@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, ViewEncapsulation } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { Book } from './book';
 import { EmployeeComponent } from './employee/employee.component';
 
-import { RouterLink, RouterOutlet } from '@angular/router';
+
 class abc {
   constructor() {
     console.log("Contructor abc called!");
@@ -34,17 +35,30 @@ export class AppComponent {
   title = 'myAngularApp';
   cdata: any;
 
+  isLoggedIn: boolean = false;
+  isvalid = true;
+
+  num1 = 200;
+  num2 = 200;
+
+  name = "abhi";
+
+  Login() {
+    this.isLoggedIn = true;
+  }
+
+  LogOut() {
+    this.isLoggedIn = false;
+  }
+
+  onChange(val: any) {
+    this.isvalid = val;
+  }
+
   // constructor(private _abc: abc, private _book: Book) {
   //   console.log("Constructor called");
   //   _abc.show();
   // }
-
-
-
-  // getData(val: any) {
-  //   this.cdata = val;
-  // }
-
 
   // //it calls only one method below it
   // @HostListener('click',['$event'])
@@ -52,4 +66,10 @@ export class AppComponent {
   //   alert('hello')
   //   console.log('sadfgsdfg')
   // }
+
+  // getData(val: any) {
+  //   this.cdata = val;
+  // }
+
+
 }

@@ -13,9 +13,76 @@
   <!-- child component -->
   <!-- <app-employee [Pdata]="Pcomponent.value"> </app-employee> -->
 
+  <!-- value of child component: {{cdata}}
+  <app-employee (childevent)="getData($event)"></app-employee> -->
 
-  value of child component: {{cdata}}
 
-  <app-employee (childevent)="cdata = $event"></app-employee>
+  <!-- @Directives -->
+  <!-- @if(false){
+  <div>
+    Hello world!!
+  </div>
+  } -->
+
+  <!-- 
+  <button (click)="Login()">Log In</button>
+  <button (click)="LogOut()">Log Out</button> -->
+  <!-- @if(isLoggedIn){
+  <div>
+    User is logged in.
+  </div>
+  }@else {
+  <div>
+    User is logged out.
+  </div>
+  } -->
+
+  <!-- 
+  <input type="radio" name="rad" checked (click)="onChange(true)">Male
+  <input type="radio" name="rad" (click)="onChange(false)">Female
+
+  @if(isvalid){
+  <div>I am Male</div>
+  }
+
+  @if(!isvalid){
+  <div>I am Female</div>
+  } -->
+  <!-- 
+  @if(num1>num2){
+  <div>
+    num1 is greater than num2
+  </div>
+  } @else if(num1<num2) { <div>
+    num1 is less than num2
+</div>
+}
+@else{
+<div>
+  num1 is equal to num2
+</div>
+}
+ -->
+
+  <!-- Switch case -->
+  <div>
+    Enter your name: <input type="text" #txtname (keyup)="0">
+  </div>
+  <div>
+    @switch (txtname.value) {
+    @case ('abhi') {
+    <b>Hello Abhi</b>
+    }
+    @case ('Ram') {
+    <b>Hello Ram</b>
+    }
+    @case ('Tarun') {
+    <b>Hello Tarun</b>
+    }
+    @default {
+    <b>No data matched</b>
+    }
+    }
+  </div>
 
 </div>
