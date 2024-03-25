@@ -64,7 +64,7 @@
 }
  -->
 
-  <!-- Switch case -->
+  <!-- Switch case
   <div>
     Enter your name: <input type="text" #txtname (keyup)="0">
   </div>
@@ -83,6 +83,106 @@
     <b>No data matched</b>
     }
     }
-  </div>
+  </div> -->
+
+  <!-- @For, -->
+  <!-- {{employees}} -->
+
+  <!-- @for(emp of employees; track emp.id; let i = $index){
+  <ul>
+    <li>
+      {{i}} - {{emp.id}} - {{emp.name}}
+    </li>
+  </ul>
+  }@empty {
+  No Data Found
+  } -->
+
+  <!-- <table border="1">
+    <tr>
+      <th>Sr No</th>
+      <th>Emp Id</th>
+      <th>Emp Name</th>
+    </tr>
+    @for(emp of employees; track emp.id; let i = $index,e=$even,o=$odd,f=$first,l=$last,c=$count){ -->
+  <!-- @if(e){
+    <tr style="color: red;">
+      <td>{{i+1}}</td>
+      <td>{{emp.id}}</td>
+      <td>{{emp.name}}</td>
+    </tr>
+    }
+    @if(o){
+    <tr style="color: blue;">
+      <td>{{i+1}}</td>
+      <td>{{emp.id}}</td>
+      <td>{{emp.name}}</td>
+    </tr>
+    } -->
+  <!-- @if(f){
+    <tr style="color: black;">
+      <td>{{i+1}}</td>
+      <td>{{emp.id}}</td>
+      <td>{{emp.name}}</td>
+    </tr>
+    }
+    @if(!f && !l){
+    <tr style="color: red;">
+      <td>{{i+1}}</td>
+      <td>{{emp.id}}</td>
+      <td>{{emp.name}}</td>
+    </tr>
+    }
+    @if(l){
+    <tr style="color: black;">
+      <td>{{i+1}}</td>
+      <td>{{emp.id}}</td>
+      <td>{{emp.name}}</td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        Total Record: {{c}}
+      </td>
+    </tr>
+    }
+    }
+    @empty {
+    <tr>
+      <td colspan="2">
+        No Data Found
+      </td>
+    </tr>
+    }
+
+  </table> -->
+
+
+  <!-- NgStyle -->
+  <!-- 
+  <div style="background-color: aqua;">Hello World!!</div>
+  <div [ngStyle]="{'background-color' : myCountry=='India' ? 'green': 'red'}">Hello World!!</div>
+
+  @for(emp of employees; track emp.name){
+  <ul>
+    <li [ngStyle]="{'background-color':getColor(emp.country)}">
+      Name: {{emp.name}} - Country: {{emp.country}}
+    </li>
+  </ul>
+  }
+
+  <div [ngStyle]="{'font-size.px':30}">Abhi</div>
+  <div [ngStyle]="{'font-size.px':fontSize}">Abhi</div> -->
+
+
+  <div class="one three">hello abhi</div>
+
+  <div [ngClass]="'one three'">Hello Abhi</div>
+  <!-- ngClass with array -->
+  <div [ngClass]="['two','four']">Hello Abhi</div>
+
+  <!-- ngClass with object -->
+  <div [ngClass]="{'one':true,'three':false}">Hello world</div>
+
+  <div [ngClass]="{'two': myCountry=='bharat'}">Hello</div>
 
 </div>

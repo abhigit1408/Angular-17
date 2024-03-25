@@ -33,27 +33,65 @@ class abc {
 
 export class AppComponent {
   title = 'myAngularApp';
-  cdata: any;
+  myCountry = 'bharat';
 
-  isLoggedIn: boolean = false;
-  isvalid = true;
+  fontSize = 60;
+  // cdata: any;
 
-  num1 = 200;
-  num2 = 200;
+  // isLoggedIn: boolean = false;
+  // isvalid = true;
 
-  name = "abhi";
+  // num1 = 200;
+  // num2 = 200;
 
-  Login() {
-    this.isLoggedIn = true;
+  // name = "abhi";
+
+  // employees: any[] = [
+  //   { id: 100, name: 'Abhi' },
+  //   { id: 101, name: 'Tarun' },
+  //   { id: 102, name: 'Amit' },
+  //   { id: 103, name: 'Bhushan' },
+  //   { id: 104, name: 'Mahesh' },
+  //   { id: 105, name: 'Aayush' },
+  //   { id: 106, name: 'Vishal' },
+
+  // ]
+  employees: any[] = [
+    { name: 'Abhi', country: 'India' },
+    { name: 'Tarun', country: 'India' },
+    { name: 'Amit', country: 'USA' },
+    { name: 'Bhushan', country: 'India' },
+    { name: 'Mahesh', country: 'China' },
+    { name: 'Aayush', country: 'Pakistan' },
+    { name: 'Vishal', country: 'Poland' },
+
+  ]
+
+  getColor(country: any) {
+    switch (country) {
+      case 'India': return 'blue';
+      case 'USA': return 'red';
+      case 'China': return 'pink';
+      case 'Pakistan': return 'gold';
+      case 'Poland': return 'green';
+    }
+    return null;
   }
 
-  LogOut() {
-    this.isLoggedIn = false;
-  }
+  //employees: any;
 
-  onChange(val: any) {
-    this.isvalid = val;
-  }
+
+  // Login() {
+  //   this.isLoggedIn = true;
+  // }
+
+  // LogOut() {
+  //   this.isLoggedIn = false;
+  // }
+
+  // onChange(val: any) {
+  //   this.isvalid = val;
+  // }
 
   // constructor(private _abc: abc, private _book: Book) {
   //   console.log("Constructor called");
@@ -70,6 +108,9 @@ export class AppComponent {
   // getData(val: any) {
   //   this.cdata = val;
   // }
+
+
+
 
 
 }

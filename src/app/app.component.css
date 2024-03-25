@@ -3,3 +3,21 @@ h1{
     text-align: center;
     text-decoration: underline;
 }
+
+.one{
+    background-color: blue;
+    color: black;
+}
+
+.two{
+    background-color: red;
+    color:white;
+}
+
+.three{
+    font-size: 30px;
+}
+
+.four{
+    font-size: 50px;
+}
