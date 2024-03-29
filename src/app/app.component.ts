@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, HostListener, ViewEncapsulation } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Book } from './book';
+import { DataBindingComponent } from './data-binding/data-binding.component';
 import { EmployeeComponent } from './employee/employee.component';
 
 
@@ -18,7 +19,7 @@ class abc {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, EmployeeComponent, RouterLink],
+  imports: [RouterOutlet, CommonModule, EmployeeComponent, RouterLink, DataBindingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 
