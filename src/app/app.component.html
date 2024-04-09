@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-  <h1>Parent Component</h1>
+  <!-- <h1>Parent Component</h1> -->
 
   <!-- Example of preserveWhitespaces -->
   <!-- <button>add</button> <button>sub</button> <button>mult</button> <button>div</button> -->
@@ -98,61 +98,59 @@
   No Data Found
   } -->
 
-  <!-- <table border="1">
+  <!-- <table border="1" [width]="'100%'">
     <tr>
-      <th>Sr No</th>
       <th>Emp Id</th>
       <th>Emp Name</th>
+      <th>Email</th>
+      <th>Gender</th>
     </tr>
-    @for(emp of employees; track emp.id; let i = $index,e=$even,o=$odd,f=$first,l=$last,c=$count){ -->
-  <!-- @if(e){
-    <tr style="color: red;">
-      <td>{{i+1}}</td>
+    @for(emp of getEmployeesForCurrentPage(); track emp.id; let i = $index,e=$even,o=$odd,f=$first,l=$last){
+
+    @if(f){
+
+    <tr style="background-color: rgb(0, 255, 60);">
       <td>{{emp.id}}</td>
-      <td>{{emp.name}}</td>
-    </tr>
-    }
-    @if(o){
-    <tr style="color: blue;">
-      <td>{{i+1}}</td>
-      <td>{{emp.id}}</td>
-      <td>{{emp.name}}</td>
-    </tr>
-    } -->
-  <!-- @if(f){
-    <tr style="color: black;">
-      <td>{{i+1}}</td>
-      <td>{{emp.id}}</td>
-      <td>{{emp.name}}</td>
+      <td>{{emp.first_name}} {{emp.last_name}}</td>
+      <td>{{emp.email}}</td>
+      <td>{{emp.gender}}</td>
     </tr>
     }
     @if(!f && !l){
-    <tr style="color: red;">
-      <td>{{i+1}}</td>
+    <tr style="background-color: rgb(147, 213, 255);">
       <td>{{emp.id}}</td>
-      <td>{{emp.name}}</td>
+      <td>{{emp.first_name}} {{emp.last_name}}</td>
+      <td>{{emp.email}}</td>
+      <td>{{emp.gender}}</td>
     </tr>
     }
     @if(l){
-    <tr style="color: black;">
-      <td>{{i+1}}</td>
+    <tr style="background-color: rgb(255, 0, 0);">
       <td>{{emp.id}}</td>
-      <td>{{emp.name}}</td>
+      <td>{{emp.first_name}} {{emp.last_name}}</td>
+      <td>{{emp.email}}</td>
+      <td>{{emp.gender}}</td>
     </tr>
-    <tr>
-      <td colspan="3">
-        Total Record: {{c}}
-      </td>
-    </tr>
+
     }
     }
     @empty {
     <tr>
-      <td colspan="2">
+      <td colspan="4">
         No Data Found
       </td>
     </tr>
     }
+    <tr>
+      <td>
+        Total Record: {{totalItems}}
+      </td>
+      <td colspan="3">
+        <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+        <span>Page {{currentPage}} of {{totalPages}}</span>
+        <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+      </td>
+    </tr>
 
   </table> -->
 
@@ -186,4 +184,5 @@
   <!-- <div [ngClass]="{'two': myCountry=='bharat'}">Hello</div> -->
 
 </div>
-<app-data-binding></app-data-binding>
+<!-- <app-data-binding></app-data-binding> -->
+<app-two-way-data-binding></app-two-way-data-binding>

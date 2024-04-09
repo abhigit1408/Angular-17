@@ -1,0 +1,12 @@
+.colorClass{
+    background-color: blue;
+}
+
+.boldClass{
+    font-weight: 900;
+}
+
+.italicClass{
+    font-style: italic;
+    font-size: 40px;
+}

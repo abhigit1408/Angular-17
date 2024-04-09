@@ -1,0 +1,9 @@
+<div style="text-align: center;">
+    <div>
+        <!-- <input type="text" [value]="message" #txtData (keyup)="onchange(txtData.value)"> -->
+        <input type="text" [(ngModel)]="message">
+    </div>
+    <div>
+        Your Message: {{message}}
+    </div>
+</div>

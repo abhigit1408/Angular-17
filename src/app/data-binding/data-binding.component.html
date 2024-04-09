@@ -61,6 +61,8 @@ Country: {{company && company.country}}<br> -->
     <img src="{{imgPath}}" alt="one" height="100"> -->
 
     <!-- Difference between Interpolation and Property Binding -->
+
+
     <!-- <h3>Property Binding</h3>
     <button [disabled]="currentValue">Click me</button>
     <h3>InterPolation</h3>
@@ -69,4 +71,32 @@ Country: {{company && company.country}}<br> -->
     <br>
     <button (click)="enableDisable()">Enable Disable</button> -->
 
+    <!-- <h3>Style Binding</h3>
+    <button style="background-color: red;">Red</button>
+    <button style="background-color: green;" [style.font-weight]="'900'">Green</button>
+    <button style="background-color: blue;" [style.font-size.px]="font">Blue</button> -->
+
+    <!-- 
+    <h3>Class Binding</h3>
+    <button class="colorClass">Color Class</button><br>
+    <button class="colorClass" [class]="classesToApply">Color Class</button> -->
+
+    <h3>Event Binding</h3>
+
+    <button (click)="clickMe()">Click Me1</button>
+    <button on-click="clickMe2()">Click Me2</button>
+
+    <div>
+        <!-- <input type="text" (keyup)="keyup()" (keydown)="keydown()"> -->
+        <!-- <input type="text" on-keyup="keyup()" on-keydown="keydown()"> -->
+        <div>
+            Enter Your Name:
+            <input type="text" #txtname on-keyup="keyup(txtname.value)">
+
+        </div>
+        <div>
+            Your Name: {{name}}
+
+        </div>
+    </div>
 </div>
