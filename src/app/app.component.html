@@ -1,33 +1,34 @@
-<div style="text-align: center;">
-  <!-- <h1>Parent Component</h1> -->
+<!-- <div style="text-align: center;"> -->
+<!-- hello world -->
+<!-- <h1>Parent Component</h1> -->
 
-  <!-- Example of preserveWhitespaces -->
-  <!-- <button>add</button> <button>sub</button> <button>mult</button> <button>div</button> -->
+<!-- Example of preserveWhitespaces -->
+<!-- <button>add</button> <button>sub</button> <button>mult</button> <button>div</button> -->
 
-  <!-- (keyup) is function, when function is called then value will passed to Child -->
+<!-- (keyup) is function, when function is called then value will passed to Child -->
 
-  <!-- *****Parent to child communication using input property***** -->
-  <!-- '#' keyword use for template reference variable -->
-  <!-- parent component: <input type="text" #Pcomponent (keyup)="0"> -->
+<!-- *****Parent to child communication using input property***** -->
+<!-- '#' keyword use for template reference variable -->
+<!-- parent component: <input type="text" #Pcomponent (keyup)="0"> -->
 
-  <!-- child component -->
-  <!-- <app-employee [Pdata]="Pcomponent.value"> </app-employee> -->
+<!-- child component -->
+<!-- <app-employee [Pdata]="Pcomponent.value"> </app-employee> -->
 
-  <!-- value of child component: {{cdata}}
+<!-- value of child component: {{cdata}}
   <app-employee (childevent)="getData($event)"></app-employee> -->
 
 
-  <!-- @Directives -->
-  <!-- @if(false){
+<!-- @Directives -->
+<!-- @if(false){
   <div>
     Hello world!!
   </div>
   } -->
 
-  <!-- 
+<!-- 
   <button (click)="Login()">Log In</button>
   <button (click)="LogOut()">Log Out</button> -->
-  <!-- @if(isLoggedIn){
+<!-- @if(isLoggedIn){
   <div>
     User is logged in.
   </div>
@@ -37,7 +38,7 @@
   </div>
   } -->
 
-  <!-- 
+<!-- 
   <input type="radio" name="rad" checked (click)="onChange(true)">Male
   <input type="radio" name="rad" (click)="onChange(false)">Female
 
@@ -48,7 +49,7 @@
   @if(!isvalid){
   <div>I am Female</div>
   } -->
-  <!-- 
+<!-- 
   @if(num1>num2){
   <div>
     num1 is greater than num2
@@ -64,7 +65,7 @@
 }
  -->
 
-  <!-- Switch case
+<!-- Switch case
   <div>
     Enter your name: <input type="text" #txtname (keyup)="0">
   </div>
@@ -85,10 +86,10 @@
     }
   </div> -->
 
-  <!-- @For, -->
-  <!-- {{employees}} -->
+<!-- @For, -->
+<!-- {{employees}} -->
 
-  <!-- @for(emp of employees; track emp.id; let i = $index){
+<!-- @for(emp of employees; track emp.id; let i = $index){
   <ul>
     <li>
       {{i}} - {{emp.id}} - {{emp.name}}
@@ -98,7 +99,7 @@
   No Data Found
   } -->
 
-  <!-- <table border="1" [width]="'100%'">
+<!-- <table border="1" [width]="'100%'">
     <tr>
       <th>Emp Id</th>
       <th>Emp Name</th>
@@ -155,8 +156,8 @@
   </table> -->
 
 
-  <!-- NgStyle -->
-  <!-- 
+<!-- NgStyle -->
+<!-- 
   <div style="background-color: aqua;">Hello World!!</div>
   <div [ngStyle]="{'background-color' : myCountry=='India' ? 'green': 'red'}">Hello World!!</div>
 
@@ -172,17 +173,64 @@
   <div [ngStyle]="{'font-size.px':fontSize}">Abhi</div> -->
 
 
-  <!-- <div class="one three">hello abhi</div>
+<!-- <div class="one three">hello abhi</div>
 
   <div [ngClass]="'one three'">Hello Abhi</div> -->
-  <!-- ngClass with array -->
-  <!-- <div [ngClass]="['two','four']">Hello Abhi</div> -->
+<!-- ngClass with array -->
+<!-- <div [ngClass]="['two','four']">Hello Abhi</div> -->
 
-  <!-- ngClass with object -->
-  <!-- <div [ngClass]="{'one':true,'three':false}">Hello world</div> -->
+<!-- ngClass with object -->
+<!-- <div [ngClass]="{'one':true,'three':false}">Hello world</div> -->
 
-  <!-- <div [ngClass]="{'two': myCountry=='bharat'}">Hello</div> -->
+<!-- <div [ngClass]="{'two': myCountry=='bharat'}">Hello</div> -->
+
+<!-- </div> -->
+<!-- <app-data-binding></app-data-binding> -->
+<!-- <app-two-way-data-binding></app-two-way-data-binding> -->
+<!-- <app-pipe></app-pipe> -->
+
+<!-- <app-practice></app-practice> -->
+
+<!-- <button (click)="getmessage()">Get Message</button> -->
+
+<!-- <h2>{{_msg}}</h2> -->
+
+<!-- Singleton and multiple services -->
+
+
+
+
+<!-- Routing in Angular 17 -->
+<!-- secondary route -->
+<!-- <a [routerLink]="[{outlets:{outlet2:['aboutusnew']}}]">About Us New</a>
+  <a [routerLink]="[{outlets:{outlet2:['aboutusnew',201]}}]">About Us New 2</a> -->
+
+
+<!-- 
+  <app-comp1></app-comp1>
+  <app-comp2></app-comp2> -->
+<!-- <div style="background-color: pink;">
+    <router-outlet name="outlet2"></router-outlet>
+  </div> -->
+<!-- </div> -->
+
+
+<nav>
+  <div><a class="item" routerLink="home" routerLinkActive="active home">Home</a></div>
+  <div><a class="item" routerLink="aboutus" [routerLinkActive]="classToApply">About Us</a></div>
+  <div><a class="item" routerLink="contactus" [routerLinkActive]="getClass()">Contact Us</a></div>
+  <div><a class="item" routerLink="Cookies" [routerLinkActive]="getClass()">Cookies</a></div>
+  <div><a class="item" routerLink="template" [routerLinkActive]="getClass()">Template Form</a></div>
+  <div><a class="item" routerLink="reactive" [routerLinkActive]="getClass()">Reactive Form(Model)</a></div>
+</nav>
+
+<div class="container">
+  <div class="grid-items">
+    <a class="item item-4" routerLink="login" routerLinkActive="active home">Login</a>
+    <a class="item item-5" routerLink="student" routerLinkActive="active home">Student</a>
+    <a class="item logout" (click)="logout()">Log Out</a>
+  </div>
+
+  <router-outlet class="grid-area"></router-outlet>
 
 </div>
-<!-- <app-data-binding></app-data-binding> -->
-<app-two-way-data-binding></app-two-way-data-binding>

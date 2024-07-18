@@ -1,0 +1,51 @@
+<h2>Registration From</h2>
+<div style="text-align: center;">
+    <form #regData="ngForm" (ngSubmit)="onSubmit(regData)">
+        <div>
+            First Name: <input type="text" placeholder="Enter Your First Name" name="fname" minlength="5" maxlength="10"
+                required ngModel #fname="ngModel">
+            <span
+                *ngIf="(fname.touched && fname.errors?.['required']) || (regData.submitted && fname.errors?.['required'])">
+                Please Enter Your First Name
+            </span>
+            <span *ngIf="fname.touched && !fname.errors?.['required'] && fname.errors?.['minlength']">
+                First Name must be at least 5 characters
+            </span>
+            <span
+                *ngIf="fname.touched && !fname.errors?.['required'] && !fname.errors?.['minlength'] && fname.errors?.['maxlength']">
+                First Name must be less than 10 characters
+            </span>
+        </div>
+        <div>
+            Last Name: <input type="text" placeholder="Enter Your Last Name" name="lname" required ngModel minlength="5"
+                maxlength="10" #lname="ngModel">
+            <span
+                *ngIf="(lname.touched && lname.errors?.['required']) || (regData.submitted && lname.errors?.['required'])">
+                Please Enter Your Last Name
+            </span>
+            <span *ngIf="lname.touched && !lname.errors?.['required'] && lname.errors?.['minlength']">
+                Last Name must be at least 5 characters
+            </span>
+            <span
+                *ngIf="lname.touched && !lname.errors?.['required'] && !lname.errors?.['minlength'] && lname.errors?.['maxlength']">
+                Last Name must be less than 10 characters
+            </span>
+        </div>
+        <div>
+            Email: <input type="text" placeholder="Enter Your Email" name="email" required ngModel #email="ngModel"
+                minlength="5" maxlength="20">
+            <span
+                *ngIf="(email.touched && email.errors?.['required']) || (regData.submitted && email.errors?.['required'])">
+                Please Enter Your Email
+            </span>
+            <span *ngIf="email.touched && !email.errors?.['required'] && email.errors?.['minlength']">
+                Email must be at least 5 characters
+            </span>
+            <span
+                *ngIf="email.touched && !email.errors?.['required'] && !email.errors?.['minlength'] && email.errors?.['maxlength']">
+                Email must be less than 20 characters
+            </span>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</div>

@@ -1,0 +1,60 @@
+<h2>Registration From</h2>
+<div>
+    <form [formGroup]="regForm">
+        <div>
+            First Name: <input type="text" placeholder="Enter Your First Name" formControlName="fname">
+            <div *ngIf="regForm.controls['fname'].touched && !regForm.controls['fname'].valid">
+                <span *ngIf="regForm.controls['fname'].hasError('required')">
+                    First Name is Required!!
+                </span>
+                <span *ngIf="regForm.controls['fname'].hasError('minlength')">
+                    First Name should be 5 characters!!
+                </span>
+                <span *ngIf="regForm.controls['fname'].hasError('maxlength')">
+                    First Name should be less than 10 characters!!
+                </span>
+            </div>
+        </div>
+        <div>
+            Last Name: <input type=" text" placeholder="Enter Your Last Name" formControlName="lname">
+            <div *ngIf="regForm.controls['lname'].touched && !regForm.controls['lname'].valid">
+                <span *ngIf="regForm.controls['lname'].hasError('required')">
+                    Last Name is Required!!
+                </span>
+                <span *ngIf="regForm.controls['lname'].hasError('minlength')">
+                    Last Name should be 5 characters!!
+                </span>
+                <span *ngIf="regForm.controls['lname'].hasError('maxlength')">
+                    Last Name should be less than 10 characters!!
+                </span>
+            </div>
+        </div>
+        <div>
+            Email: <input type="text" placeholder="Enter Your Email" formControlName="email">
+            <div *ngIf="regForm.controls['email'].touched && !regForm.controls['email'].valid">
+                <span *ngIf="regForm.controls['email'].hasError('required')">
+                    Email is Required!!
+                </span>
+                <span *ngIf="regForm.controls['email'].hasError('email')">
+                    Email should be correct!!
+                </span>
+            </div>
+        </div>
+        <div formArrayName="mobilenos">
+            <div *ngFor="let mobileno of regForm.get('mobilenos').controls, index as idx">
+                Mobile No: <input type="text" placeholder="Enter Your Mobile No" [formControlName]="idx">
+                <button (click)="deleteRow(idx)">Delete</button>
+                <!-- <span *ngIf="regForm.controls['i'].touched && !regForm.controls['i'].valid">
+                    Mobile No is Required!!
+                </span> -->
+            </div>
+            <button (click)="addRow()">Add more</button>
+        </div>
+        <div>
+            <button type="submit" (click)="OnSubmit(regForm)">Submit</button>
+            <button type="reset">Cancel</button>
+            <button (click)="reset()">Cancel 2</button>
+            <button (click)="fillData()">Fill Data</button>
+        </div>
+    </form>
+</div>
