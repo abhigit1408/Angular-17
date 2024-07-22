@@ -8,10 +8,11 @@ export const authGuard: CanActivateFn = (route, state) => {
   console.log(isLogin);
 
   if (isLogin == 'false' || isLogin == null) {
-    alert('Please login... Redirecting to login page.')
+    alert('Please login...Redirecting to login page.')
     _router.navigate(['login']);
     return false;
   } else {
     return true;
   }
 }
+

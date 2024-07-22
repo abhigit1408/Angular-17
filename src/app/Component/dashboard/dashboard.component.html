@@ -1,1 +1,38 @@
-<h2>Welcome to Home Page</h2>
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <label for="photo">Photo:</label>
+            </td>
+            <td>
+                <input class="form-control-file" type="file" id="photo" (change)="onFileSelected($event)"
+                    formControlName="photo" multiple>
+            </td>
+        </tr>
+        <tr>
+            <td *ngFor="let item of imgUrl;let i = index">
+                <img id="img" height="150" width="150" src={{item}} alt="">
+                <button *ngIf="!isImageUploaded(item)" (click)="onImageSelected(i)">
+                    Add to New Array
+                </button>
+            </td>
+        </tr>
+
+        <tr>
+            <td *ngFor="let item of imgName">
+                <label for="img">{{item}}</label>
+            </td>
+        </tr>
+        <tr *ngIf="newImgArray.length > 0">
+            <td *ngFor="let img of newImgArray">
+                <img height="150" width="150" [src]="img.imgUrl" alt="{{img.imgName}}">
+                <p>{{img.imgName}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Uploaded files count: {{newImgArray.length}}
+            </td>
+        </tr>
+    </table>
+</div>
