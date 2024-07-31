@@ -20,6 +20,9 @@ export class ReactiveFormsComponent implements OnInit {
 
   constructor(private _fb: FormBuilder,) {
 
+    if (localStorage.getItem('reactForm')) {
+      this.reactForms = JSON.parse(localStorage.getItem('reactForm')!);
+    }
   }
 
   ngOnInit() {
@@ -110,6 +113,8 @@ export class ReactiveFormsComponent implements OnInit {
     this.reactform = fromdata.value;
     this.reactForms.push(this.reactform);
     console.log(this.reactForms);
+
+    localStorage.setItem('reactForm', JSON.stringify(this.reactForms));
   }
 
   reset() {
