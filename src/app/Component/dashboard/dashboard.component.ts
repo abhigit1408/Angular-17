@@ -38,11 +38,12 @@ export class DashboardComponent {
     for (const file of selectedFiles) {
       const { name, size } = file;
       if (size > 100 * 1024 || size < 20 * 1024) {
-        alert(`File size of "${name}" is not within the allowed range. Rejected.`);
         input.value = '';
+        alert(`File size of "${name}" is not within the allowed range. Rejected.`);
         return;
       }
       if (this.hasDoubleExtension(name) || this.containsNullByte(name)) {
+        input.value = '';
         alert(`File name "${name}" contains a double extension or null byte. Rejected.`);
         return;
       }

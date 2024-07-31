@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ReactiveForm } from '../../../Model/ReactiveForm';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -14,7 +15,10 @@ export class ReactiveFormsComponent implements OnInit {
 
   regForm: any;
 
-  constructor(private _fb: FormBuilder) {
+  reactform: ReactiveForm = new ReactiveForm();
+  reactForms: ReactiveForm[] = [];
+
+  constructor(private _fb: FormBuilder,) {
 
   }
 
@@ -39,11 +43,11 @@ export class ReactiveFormsComponent implements OnInit {
       fname: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(10)])],
       lname: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(10)])],
       email: ['', Validators.compose([Validators.required, Validators.email])],
-      // mobileno: ['', [Validators.required]],
+      mobileno: ['', Validators.compose([Validators.required, Validators.pattern("^[0-9]*$")])],
 
-      mobilenos: new FormArray([
-        new FormControl()
-      ])
+      // mobilenos: new FormArray([
+      //   new FormControl()
+      // ])
     })
 
     //// Value changes in single control only
@@ -93,15 +97,19 @@ export class ReactiveFormsComponent implements OnInit {
   }
 
   OnSubmit(fromdata: FormGroup) {
-    console.log(this.regForm.value);
-    console.log(this.regForm.valid);
+    // console.log(this.regForm.value);
+    // console.log(this.regForm.valid);
 
-    console.log(fromdata.get('mobilenos')?.value);
-    // console.log(fromdata.get('email')?.value);
+    // console.log(fromdata.get('mobilenos')?.value);
+    // // console.log(fromdata.get('email')?.value);
 
-    for (let mobileno of fromdata.get('mobilenos')?.value) {
-      console.log(mobileno);
-    };
+    // // for (let mobileno of fromdata.get('mobilenos')?.value) {
+    // //   console.log(mobileno);
+    // // };
+
+    this.reactform = fromdata.value;
+    this.reactForms.push(this.reactform);
+    console.log(this.reactForms);
   }
 
   reset() {

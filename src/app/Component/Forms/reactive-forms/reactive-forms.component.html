@@ -1,9 +1,10 @@
 <h2>Registration From</h2>
-<div>
+<div class="form-group">
     <form [formGroup]="regForm">
         <div>
-            First Name: <input type="text" placeholder="Enter Your First Name" formControlName="fname">
-            <div *ngIf="regForm.controls['fname'].touched && !regForm.controls['fname'].valid">
+            <label for="fname">First Name:</label>
+            <input type="text" placeholder="Enter Your First Name" formControlName="fname">
+            <div *ngIf="regForm.controls['fname'].touched && !regForm.controls['fname'].valid" class="error-message">
                 <span *ngIf="regForm.controls['fname'].hasError('required')">
                     First Name is Required!!
                 </span>
@@ -16,8 +17,9 @@
             </div>
         </div>
         <div>
-            Last Name: <input type=" text" placeholder="Enter Your Last Name" formControlName="lname">
-            <div *ngIf="regForm.controls['lname'].touched && !regForm.controls['lname'].valid">
+            <label for="lname">Last Name:</label>
+            <input type="text" placeholder="Enter Your Last Name" formControlName="lname">
+            <div *ngIf="regForm.controls['lname'].touched && !regForm.controls['lname'].valid" class="error-message">
                 <span *ngIf="regForm.controls['lname'].hasError('required')">
                     Last Name is Required!!
                 </span>
@@ -30,8 +32,9 @@
             </div>
         </div>
         <div>
-            Email: <input type="text" placeholder="Enter Your Email" formControlName="email">
-            <div *ngIf="regForm.controls['email'].touched && !regForm.controls['email'].valid">
+            <label for="email">Email:</label>
+            <input type="text" placeholder="Enter Your Email" formControlName="email">
+            <div *ngIf="regForm.controls['email'].touched && !regForm.controls['email'].valid" class="error-message">
                 <span *ngIf="regForm.controls['email'].hasError('required')">
                     Email is Required!!
                 </span>
@@ -40,21 +43,50 @@
                 </span>
             </div>
         </div>
-        <div formArrayName="mobilenos">
+        <div>
+            <label for="mobileno">Mobile No:</label>
+            <input type="text" placeholder="Enter Your Mobile No" formControlName="mobileno" pattern="[0-9]*">
+            <div *ngIf="regForm.controls['mobileno'].touched && !regForm.controls['mobileno'].valid"
+                class="error-message">
+                <span *ngIf="regForm.controls['mobileno'].hasError('required')">
+                    Mobile No is Required!!
+                    <!-- <div formArrayName="mobilenos">
             <div *ngFor="let mobileno of regForm.get('mobilenos').controls, index as idx">
                 Mobile No: <input type="text" placeholder="Enter Your Mobile No" [formControlName]="idx">
-                <button (click)="deleteRow(idx)">Delete</button>
-                <!-- <span *ngIf="regForm.controls['i'].touched && !regForm.controls['i'].valid">
+                <button (click)="deleteRow(idx)">Delete</button> -->
+                    <!-- <span *ngIf="regForm.controls['i'].touched && !regForm.controls['i'].valid">
                     Mobile No is Required!!
                 </span> -->
-            </div>
+                    <!-- </div>
             <button (click)="addRow()">Add more</button>
+        </div> -->
+                </span>
+            </div>
         </div>
         <div>
             <button type="submit" (click)="OnSubmit(regForm)">Submit</button>
             <button type="reset">Cancel</button>
-            <button (click)="reset()">Cancel 2</button>
-            <button (click)="fillData()">Fill Data</button>
+            <!-- <button (click)="reset()">Cancel 2</button>
+            <button (click)="fillData()">Fill Data</button> -->
         </div>
     </form>
+</div>
+
+<div>
+    <table *ngIf="reactForms.length> 0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile No.</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let form of reactForms; let i = index">
+                <td>{{ form.fname }} {{ form.lname }}</td>
+                <td>{{ form.email }}</td>
+                <td>{{ form.mobileno}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

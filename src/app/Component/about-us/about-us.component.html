@@ -2,3 +2,282 @@
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat adipisci iure quia nobis praesentium! Eius totam
     consequuntur eveniet dolores iste veniam atque minus magni molestias obcaecati voluptatem nihil provident, in alias,
     expedita, nesciunt excepturi!</p>
+
+<!-- 
+<form [formGroup]="form4" class="form-horizontal" autocomplete="off">
+    <div class="ui-grid-row page-title">
+        <h2>Information regarding School</h2>
+    </div>
+
+    <div class="ui-grid-row">
+        <div class="ui-grid-col-12">
+            <table style="width:100%;">
+                <tr>
+                    <th>Sr.No.</th>
+                    <th>Particulars Essential Requirements</th>
+                    <th>Number</th>
+                    <th>Size</th>
+                    <th>Total area</th>
+
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Class Rooms (500 Sq.Ft.)</td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="classRoomsNo" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="classRoomsSize" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="classRoomsTotalArea" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>Staff Rooms No
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="staffRoomsNo" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="staffRoomsNoSize" />
+                    </td>
+                    <td><input type="text" maxlength="10" class="form-control"
+                            formControlName="staffRoomsNoTotalArea" /></td>
+
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Composite Sc.Lab </td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="compositeSchLabNO" />
+                    </td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="compositeSchLabSize" />
+                    </td>
+                    <td><input type="text" maxlength="10" class="form-control"
+                            formControlName="compositeSchTotalArea" /></td>
+
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Physics Lab </td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="physicsLabNo" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="physicsLabSize" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="physicsLabTotalArea" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Chemistry Lab </td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="chemistryLabNo" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="chemistryLabSize" />
+                    </td>
+                    <td><input type="text" maxlength="10" class="form-control"
+                            formControlName="chemistryLabTotalArea" /></td>
+                </tr>
+
+                <tr>
+                    <td>6</td>
+                    <td>Biology Lab </td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="biologyLabNo" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="biologyLabSize" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="biologyLabTotalArea" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Mathematics Lab </td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="mathematicsLabNo" />
+                    </td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="mathematicsLabSize" />
+                    </td>
+                    <td><input type="text" maxlength="10" class="form-control"
+                            formControlName="mathematicsLabTotalArea" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>ComputerLab </td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="computerLabNo" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="computerLabSize" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="computerLabTotalArea" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Library </td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="libraryNo" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="librarySize" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="libraryTotalArea" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Art And Craft Room </td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="artAndCraftRoomNo" />
+                    </td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="artAndCraftRoomSize" />
+                    </td>
+                    <td><input type="text" maxlength="10" class="form-control"
+                            formControlName="artAndCraftRoomSTotalArea" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Wellness Room </td>
+
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="wellnessRoom" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="wellnessRoomSize" />
+                    </td>
+                    <td><input type="text" maxlength="10" class="form-control"
+                            formControlName="wellnessRoomTotalArea" /></td>
+
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Toilets (Boys) </td>
+
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="toiletsBoysNo" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="toiletsBoysSize" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="toiletsBoysTotalArea" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Toilets (Girls) </td>
+
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="toiletsGirlsNo" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="toiletsGirlsSize" />
+                    </td>
+                    <td><input type="text" maxlength="10" class="form-control"
+                            formControlName="toiletsGirlsTotalArea" /></td>
+
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Music Room </td>
+
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="musicRoom" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="musicRoomSize" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="musicRoomTotalArea" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Home Science Lab </td>
+
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="homeScienceLabNo"></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="homeScienceLabSize"
+                            omeScienceLabSize /></td>
+                    <td><input type="text" maxlength="10" class="form-control"
+                            formControlName="homeScienceLabTotalArea">
+                    </td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Geography Lab </td>
+
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="geographyLabNo" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="geographyLabSize" />
+                    </td>
+                    <td><input type="text" maxlength="10" class="form-control"
+                            formControlName="geographyLabTotalArea" /></td>
+
+
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Language Lab </td>
+
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="languageLabNo" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="languageLabSize" /></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="languageLabTotalArea" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td> Other Rooms </td>
+
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="otherRoomsNo"></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="otherRoomsSize"></td>
+                    <td><input type="text" maxlength="10" class="form-control" formControlName="otherRoomsTotalRoom" />
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="ui-grid-row page-title">
+        <h2>Information Regarding Staff </h2>
+    </div>
+    <div class="ui-grid-row">
+        <table class="staff-info-table"
+            style="width: 100%;border-collapse: collapse; border: 1px solid #ccc; text-align: left;">
+            <tr>
+                <th>Name of Staff</th>
+                <th>Father/Spouse Name</th>
+                <th>Date of Birth</th>
+                <th>Date of Appointment</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="form-control" formControlName="staffName" />
+                </td>
+                <td>
+                    <input type="text" class="form-control" formControlName="staffF_SName" />
+                </td>
+                <td>
+                    <input type="date" class="form-control" formControlName="staffDob" />
+
+                </td>
+                <td>
+                    <input type="date" class="form-control" formControlName="staffDateOfAppointment" />
+
+                </td>
+            </tr>
+            <tr>
+                <th>Date of Confirmation</th>
+                <th>Educational Qualification and Specialization</th>
+                <th>Professional Qualification</th>
+                <th>Designation</th>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="date" class="form-control" formControlName="staffDateOfConfirm" />
+
+                </td>
+                <td>
+                    <input type="text" class="form-control" formControlName="staffEduQual" />
+                </td>
+                <td>
+                    <input type="text" class="form-control" formControlName="staffProQual" />
+                </td>
+                <td>
+                    <input type="text" class="form-control" formControlName="staffDesignation" />
+                </td>
+            </tr>
+            <tr>
+                <th>Class Taught</th>
+                <th>Subject Taught </th>
+                <th>Basic Salary + DA = Total Salary</th>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="text" class="form-control" formControlName="staffClassTaught" />
+                </td>
+                <td>
+                    <input type="text" class="form-control" formControlName="staffSubjentTaught" />
+                </td>
+                <td>
+                    <input type="number" class="form-control" formControlName="staffSalary" />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</form> -->
